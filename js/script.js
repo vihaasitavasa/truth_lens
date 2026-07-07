@@ -6,6 +6,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Navigation Mobile Menu
     initNavigation();
+
+    // Initialize Search Functionality (Explore page)
+    initSearch();
 });
 
 /**
@@ -43,5 +46,46 @@ function initNavigation() {
                 navMenu.classList.remove('open');
             });
         });
+    }
+}
+
+/**
+ * Handles the search filtering on the Explore page
+ */
+function initSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+    const cards = document.querySelectorAll('.explore-card');
+
+    if (!searchInput || !cards.length) return;
+
+    // Filter function to match input text with card contents
+    const filterCards = () => {
+        const query = searchInput.value.toLowerCase().trim();
+
+        cards.forEach(card => {
+            const locationData = card.getAttribute('data-location') || '';
+            const cardTitle = card.querySelector('.explore-card-title')?.textContent || '';
+            const cardLocationText = card.querySelector('.explore-card-location')?.textContent || '';
+            const cardText = card.querySelector('.explore-card-text')?.textContent || '';
+
+            // Combine all available text elements inside the card for search
+            const searchableText = `${locationData} ${cardTitle} ${cardLocationText} ${cardText}`.toLowerCase();
+
+            // Toggle card display based on matching
+            if (searchableText.includes(query)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    };
+
+    // Filter dynamically as the user types (real-time filtering)
+    searchInput.addEventListener('input', filterCards);
+
+    // Also run filter when clicking the search button explicitly
+    if (searchButton) {
+        searchButton.addEventListener('click', filterCards);
     }
 }
