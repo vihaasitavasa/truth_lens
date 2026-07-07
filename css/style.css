@@ -497,3 +497,241 @@ img {
         width: 100%;
     }
 }
+
+/* ==========================================================================
+   GLOBAL SECTION COMPONENT STYLES
+   ========================================================================== */
+.section-tag {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+    display: inline-block;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+.about {
+    padding: 6rem 2rem;
+    background-color: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+/* Left Column - Visual comparison mockups */
+.about-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.comparison-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    gap: 1rem;
+}
+
+.comparison-card {
+    background-color: var(--background);
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.comparison-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.comparison-card.unverified {
+    border-left: 4px solid #ef4444; /* Alert Red */
+    opacity: 0.7;
+}
+
+.comparison-card.verified {
+    border-left: 4px solid var(--success); /* Success Green */
+    background-color: var(--surface);
+    box-shadow: var(--shadow-md);
+}
+
+.comp-badge-danger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #ef4444;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.comp-badge-success {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--success);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.comp-text {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.comp-meta {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    display: block;
+}
+
+.comparison-card.verified .comp-meta {
+    color: var(--primary-light);
+    font-weight: 500;
+}
+
+.comparison-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+.comparison-arrow i {
+    color: var(--primary-light);
+    animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
+/* Right Column - Text Pillars */
+.about-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.section-desc strong {
+    color: var(--primary);
+}
+
+.about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.about-pillar {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.pillar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: rgba(30, 58, 138, 0.05); /* light primary blue tint */
+    color: var(--primary);
+    border-radius: var(--radius-md);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(30, 58, 138, 0.1);
+}
+
+.pillar-text h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.pillar-text p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (ABOUT ONLY)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .about-container {
+        gap: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 4rem 1.5rem;
+    }
+    
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .about-visual {
+        order: 2; /* Mockup card goes under the text on mobile */
+    }
+    
+    .about-content {
+        order: 1;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .about-pillar {
+        text-align: left;
+    }
+}
