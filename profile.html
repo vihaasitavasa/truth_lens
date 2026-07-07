@@ -36,8 +36,179 @@
     </header>
 
     <!-- Main Content Area -->
-    <main id="main-content" style="margin-top: 80px; padding: 2rem;">
-        <!-- Feature 11: Profile Card will be inserted here -->
+    <main id="main-content" class="profile-page">
+        <section class="profile-section">
+            <div class="profile-header-top">
+                <span class="section-tag">Traveler Profile</span>
+                <h1 class="section-title">My Travel Profile</h1>
+                <p class="explore-subtitle">Manage your verified credentials and view your historical journal entries.</p>
+            </div>
+
+            <div class="profile-container">
+                <div class="profile-grid">
+                    
+                    <!-- Left Column: Profile Card -->
+                    <div class="profile-sidebar">
+                        <div class="profile-card">
+                            <div class="profile-avatar-wrapper">
+                                <div class="profile-avatar-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                                <span class="profile-badge-elite"><i class="fa-solid fa-crown"></i> Elite Traveler</span>
+                            </div>
+                            
+                            <h2 class="profile-display-name">Alex Mercer</h2>
+                            <span class="profile-handle">@alex_mercer</span>
+                            
+                            <p class="profile-bio-text">Adventure seeker, photographer, and open-source traveler. Capturing the world one GPS stamp at a time.</p>
+                            
+                            <!-- Verification Accuracy Meter -->
+                            <div class="profile-rating-box">
+                                <div class="rating-label-row">
+                                    <span>Verification Accuracy</span>
+                                    <span class="rating-percentage">99.8%</span>
+                                </div>
+                                <div class="rating-bar-bg">
+                                    <div class="rating-bar-fill" style="width: 99.8%;"></div>
+                                </div>
+                                <span class="rating-subtext">Based on 6 satellite-verified coordinates</span>
+                            </div>
+
+                            <!-- Traveler Bio stats -->
+                            <ul class="profile-quick-stats">
+                                <li>
+                                    <span class="stat-icon-bullet"><i class="fa-solid fa-calendar-days"></i></span>
+                                    <span class="stat-text">Joined March 2026</span>
+                                </li>
+                                <li>
+                                    <span class="stat-icon-bullet"><i class="fa-solid fa-location-dot"></i></span>
+                                    <span class="stat-text">Based in Hamburg, Germany</span>
+                                </li>
+                                <li>
+                                    <span class="stat-icon-bullet"><i class="fa-solid fa-passport"></i></span>
+                                    <span class="stat-text">Passport Tier: Gold Explorer</span>
+                                </li>
+                            </ul>
+
+                            <div class="profile-actions">
+                                <button class="btn btn-primary btn-edit-profile"><i class="fa-solid fa-user-pen"></i> Edit Profile</button>
+                                <button class="btn btn-secondary btn-settings"><i class="fa-solid fa-gears"></i> Account Settings</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Activity History -->
+                    <div class="profile-activity-feed">
+                        <h3 class="activity-feed-title"><i class="fa-solid fa-timeline"></i> Recent Verified Logs</h3>
+                        
+                        <div class="activity-timeline">
+                            
+                            <!-- Activity Item 1: Kyoto -->
+                            <div class="activity-item">
+                                <div class="activity-dot"></div>
+                                <div class="activity-card-body">
+                                    <div class="activity-card-header">
+                                        <h4 class="activity-title">Kyoto Pagoda Walks</h4>
+                                        <span class="activity-date">July 7, 2026</span>
+                                    </div>
+                                    <span class="activity-location"><i class="fa-solid fa-location-dot"></i> Kyoto, Japan</span>
+                                    
+                                    <div class="activity-preview-box">
+                                        <div class="activity-preview-img">
+                                            <svg viewBox="0 0 350 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="350" height="140" fill="#ECFDF5"/>
+                                                <circle cx="300" cy="40" r="15" fill="#FBBF24" opacity="0.8"/>
+                                                <path d="M-10 140 L90 70 L200 140 Z" fill="#A7F3D0"/>
+                                                <rect x="70" y="80" width="10" height="60" fill="#065F46" opacity="0.8"/>
+                                            </svg>
+                                        </div>
+                                        <div class="activity-preview-text">
+                                            <p>Wandered into the shrines around Kyoto in the early morning. Extremely peaceful, untouched by crowd rushes. Highlight of my Japan trip!</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="activity-card-footer">
+                                        <div class="activity-coords">
+                                            <span><i class="fa-solid fa-satellite"></i> Lat: 35.0116° N</span>
+                                            <span>Lon: 135.7681° E</span>
+                                        </div>
+                                        <span class="activity-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Activity Item 2: Rome -->
+                            <div class="activity-item">
+                                <div class="activity-dot"></div>
+                                <div class="activity-card-body">
+                                    <div class="activity-card-header">
+                                        <h4 class="activity-title">Colosseum Morning cobblestones</h4>
+                                        <span class="activity-date">May 4, 2026</span>
+                                    </div>
+                                    <span class="activity-location"><i class="fa-solid fa-location-dot"></i> Rome, Italy</span>
+                                    
+                                    <div class="activity-preview-box">
+                                        <div class="activity-preview-img">
+                                            <svg viewBox="0 0 350 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="350" height="140" fill="#FFF5F5"/>
+                                                <circle cx="280" cy="30" r="12" fill="#FBBF24" opacity="0.8"/>
+                                                <path d="M50 140 C50 90 300 90 300 140 Z" fill="#FCA5A5" opacity="0.5"/>
+                                                <rect x="120" y="110" width="60" height="30" fill="#EF4444" opacity="0.3"/>
+                                            </svg>
+                                        </div>
+                                        <div class="activity-preview-text">
+                                            <p>Walked around the ancient architecture at sunrise. The marble ruins glow under the early morning orange light.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="activity-card-footer">
+                                        <div class="activity-coords">
+                                            <span><i class="fa-solid fa-satellite"></i> Lat: 41.9028° N</span>
+                                            <span>Lon: 12.4964° E</span>
+                                        </div>
+                                        <span class="activity-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Activity Item 3: Mumbai -->
+                            <div class="activity-item">
+                                <div class="activity-dot"></div>
+                                <div class="activity-card-body">
+                                    <div class="activity-card-header">
+                                        <h4 class="activity-title">Gateway of India Sunrise</h4>
+                                        <span class="activity-date">February 15, 2026</span>
+                                    </div>
+                                    <span class="activity-location"><i class="fa-solid fa-location-dot"></i> Mumbai, India</span>
+                                    
+                                    <div class="activity-preview-box">
+                                        <div class="activity-preview-img">
+                                            <svg viewBox="0 0 350 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect width="350" height="140" fill="#FFFBEB"/>
+                                                <circle cx="50" cy="40" r="16" fill="#FBBF24" opacity="0.8"/>
+                                                <rect x="100" y="70" width="150" height="70" fill="#F59E0B" opacity="0.2"/>
+                                                <path d="M120 70 L230 70 L230 140 L120 140 Z" fill="#D97706" opacity="0.3"/>
+                                            </svg>
+                                        </div>
+                                        <div class="activity-preview-text">
+                                            <p>Witnessed the sunrise behind the grand archway. Cool morning sea breeze and pigeons gathering over the harbor.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="activity-card-footer">
+                                        <div class="activity-coords">
+                                            <span><i class="fa-solid fa-satellite"></i> Lat: 19.0760° N</span>
+                                            <span>Lon: 72.8777° E</span>
+                                        </div>
+                                        <span class="activity-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
