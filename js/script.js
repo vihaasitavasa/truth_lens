@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Check-In Functionality (Check-In page)
     initCheckIn();
+
+    // Initialize Profile Functionality (Profile page)
+    initProfile();
 });
 
 /**
@@ -163,7 +166,149 @@ function initCheckIn() {
     // Upload Box Mock Styling
     if (uploadBox) {
         uploadBox.addEventListener('click', () => {
-            alert('This would open your device\'s native file browser to select an image.');
+            showCustomModal(
+                'Image Selection',
+                'Camera integration is locked to secure device paths. Selection of metadata-verified images is coming soon.',
+                'info'
+            );
         });
     }
+
+    // Submit Check-In form validation
+    const btnSubmitCheckin = document.getElementById('btnSubmitCheckin');
+    if (btnSubmitCheckin) {
+        btnSubmitCheckin.addEventListener('click', () => {
+            const cityVal = document.getElementById('checkinCity') ? document.getElementById('checkinCity').value.trim() : '';
+            const countryVal = document.getElementById('checkinCountry') ? document.getElementById('checkinCountry').value.trim() : '';
+            const latVal = gpsLat.value;
+            const notesVal = document.getElementById('checkinNotes') ? document.getElementById('checkinNotes').value.trim() : '';
+            
+            if (!cityVal || !countryVal || !notesVal) {
+                showCustomModal(
+                    'Incomplete Fields',
+                    'Please fill out all required fields (City, Country, and Journal Notes) to document your journey.',
+                    'warning'
+                );
+                return;
+            }
+            
+            if (!latVal) {
+                showCustomModal(
+                    'GPS Verification Required',
+                    'Please click "Get Current Location" to secure your satellite coordinates before publishing.',
+                    'warning'
+                );
+                return;
+            }
+            
+            // Show successful published modal
+            showCustomModal(
+                'Check-In Published!',
+                `Your memory of ${cityVal}, ${countryVal} has been verified and successfully appended to your secure travel ledger.`,
+                'success'
+            );
+            
+            // Reset the form
+            const form = document.getElementById('checkinForm');
+            if (form) {
+                form.reset();
+            }
+            gpsStatus.textContent = '';
+        });
+    }
+}
+
+/**
+ * Handles Profile Page button click overlays
+ */
+function initProfile() {
+    const btnEditProfile = document.querySelector('.btn-edit-profile');
+    const btnSettings = document.querySelector('.btn-settings');
+    
+    if (btnEditProfile) {
+        btnEditProfile.addEventListener('click', () => {
+            showCustomModal(
+                'Edit Profile',
+                'Profile editing is currently locked in read-only mode for this verified explorer account.',
+                'info'
+            );
+        });
+    }
+    
+    if (btnSettings) {
+        btnSettings.addEventListener('click', () => {
+            showCustomModal(
+                'Settings Locker',
+                'Your cryptographic signature settings are managed via satellite sync. Sync holds are currently inactive.',
+                'warning'
+            );
+        });
+    }
+}
+
+/**
+ * Creates and displays a premium custom animated modal dialog overlay
+ * @param {string} title - The title of the modal
+ * @param {string} message - The modal body description
+ * @param {string} iconType - The type of icon: 'success' | 'info' | 'warning'
+ */
+function showCustomModal(title, message, iconType) {
+    // 1. Create container
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    
+    // Set icon code based on type
+    let iconHTML = '';
+    let iconClass = '';
+    if (iconType === 'success') {
+        iconHTML = '<i class="fa-solid fa-circle-check"></i>';
+        iconClass = 'modal-icon-success';
+    } else if (iconType === 'warning') {
+        iconHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+        iconClass = 'modal-icon-warning';
+    } else {
+        iconHTML = '<i class="fa-solid fa-circle-info"></i>';
+        iconClass = 'modal-icon-info';
+    }
+    
+    overlay.innerHTML = `
+        <div class="modal-card">
+            <div class="modal-icon-container ${iconClass}">
+                ${iconHTML}
+            </div>
+            <h4 class="modal-title">${title}</h4>
+            <p class="modal-message">${message}</p>
+            <button class="btn btn-primary modal-close-btn">Acknowledge</button>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    // 2. Animate in after render (requires a tiny timeout)
+    setTimeout(() => {
+        overlay.classList.add('active');
+    }, 10);
+    
+    // 3. Setup close actions
+    const closeModal = () => {
+        overlay.classList.remove('active');
+        // Wait for fade out animation before destroying element
+        setTimeout(() => {
+            overlay.remove();
+        }, 300);
+    };
+    
+    // Close button
+    const closeBtn = overlay.querySelector('.modal-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+    
+    // Click outside backdrop
+    overlay.addEventListener('click', (event) => {
+        if (event.target === overlay) {
+            closeModal();
+        }
+    });
+}
 }
