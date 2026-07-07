@@ -2411,3 +2411,131 @@ img {
         height: 120px;
     }
 }
+
+/* ==========================================================================
+   EXTRA SMALL MOBILE DEVICES (MAX-WIDTH: 480PX) - OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 480px) {
+    /* Touch Target & Sizing Adjustments */
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        min-height: 48px; /* Meet standard 48px minimum height for touch targets */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .nav-link {
+        padding: 0.9rem 1.5rem; /* Easy tap targets inside mobile menu drawer */
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Typography scale down to prevent line breaks and overflow */
+    .section-title {
+        font-size: 1.85rem !important;
+        line-height: 1.25;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem !important;
+    }
+
+    .section-tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    /* Padding reductions for compact margins */
+    .hero,
+    .about-section,
+    .features-section,
+    .destinations,
+    .explore-hero,
+    .explore-feed,
+    .checkin-section,
+    .passport-section,
+    .profile-section {
+        padding: 3rem 1rem !important;
+    }
+
+    /* Form specific adjustments */
+    .checkin-card {
+        padding: 1.75rem 1rem !important;
+    }
+
+    .gps-group-container {
+        padding: 1rem !important;
+    }
+
+    .upload-box {
+        padding: 2rem 1rem !important;
+    }
+
+    /* Passport specific adjustments */
+    .passport-cover-card {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .passport-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+
+    .passport-name {
+        font-size: 1.5rem;
+    }
+
+    .passport-booklet {
+        padding: 1.75rem 1rem !important;
+    }
+
+    .passport-stamp {
+        width: 150px;
+        height: 150px;
+    }
+
+    .stamp-inner {
+        padding: 0.75rem;
+    }
+
+    .stamp-city {
+        font-size: 0.95rem;
+    }
+
+    .stamp-icon {
+        font-size: 1.5rem;
+    }
+
+    /* Profile specific adjustments */
+    .profile-card {
+        padding: 1.75rem 1rem !important;
+    }
+
+    .profile-activity-feed {
+        padding: 1.75rem 1rem !important;
+    }
+
+    .activity-preview-box {
+        padding: 0.75rem !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Header Brand spacing */
+    .logo-text {
+        font-size: 1.15rem;
+    }
+
+    /* Footer list alignments */
+    .footer-container {
+        padding: 3rem 1rem 1rem 1rem;
+    }
+
+    .footer-col {
+        margin-bottom: 1.75rem;
+    }
+}
