@@ -36,8 +36,239 @@
     </header>
 
     <!-- Main Content Area -->
-    <main id="main-content" style="margin-top: 80px; padding: 2rem;">
-        <!-- Feature 7: Explore Page contents will be inserted here -->
+    <main id="main-content">
+        <!-- Explore Hero Area -->
+        <section class="explore-hero">
+            <div class="explore-hero-container">
+                <span class="section-tag">Search & Explore</span>
+                <h1 class="section-title">Explore Verified Memories</h1>
+                <p class="explore-subtitle">Browse through authentic travel journals posted by real visitors, complete with verified coordinates and local stamps.</p>
+                
+                <!-- Search Bar Container -->
+                <div class="search-container">
+                    <div class="search-bar-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="searchInput" placeholder="Search by city, country, or keyword (e.g. Kyoto)..." aria-label="Search Destinations">
+                        <button id="searchButton" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explore Grid Section -->
+        <section class="explore-feed">
+            <div class="explore-feed-container">
+                <div class="explore-grid" id="exploreGrid">
+                    
+                    <!-- Card 1: Kyoto -->
+                    <div class="explore-card" data-location="kyoto japan bamboo temple">
+                        <div class="explore-card-header">
+                            <div class="traveler-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                            <div class="traveler-info">
+                                <span class="traveler-username">@kaito_travels</span>
+                                <span class="traveler-date">July 2026</span>
+                            </div>
+                            <span class="explore-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <div class="explore-card-img">
+                            <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="350" height="220" fill="#ECFDF5"/>
+                                <circle cx="280" cy="65" r="22" fill="#FBBF24" opacity="0.8"/>
+                                <path d="M-20 220 L120 120 L260 220 Z" fill="#A7F3D0"/>
+                                <path d="M100 220 L240 100 L380 220 Z" fill="#047857" opacity="0.15"/>
+                                <rect x="80" y="120" width="20" height="100" fill="#065F46" opacity="0.8"/>
+                                <rect x="75" y="140" width="30" height="6" fill="#047857"/>
+                                <rect x="70" y="160" width="40" height="6" fill="#047857"/>
+                                <path d="M90 95 L90 120" stroke="#065F46" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="explore-card-body">
+                            <div class="explore-card-meta">
+                                <h3 class="explore-card-title">Kyoto Pagoda Walks</h3>
+                                <span class="explore-card-location"><i class="fa-solid fa-location-dot"></i> Kyoto, Japan</span>
+                            </div>
+                            <p class="explore-card-text">Wandered into the shrines around Kyoto in the early morning. Extremely peaceful, untouched by crowd rushes. Highlight of my Japan trip!</p>
+                            <div class="explore-card-coords">
+                                <span><i class="fa-solid fa-satellite"></i> Lat: 35.0116° N</span>
+                                <span>Lon: 135.7681° E</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Santorini -->
+                    <div class="explore-card" data-location="santorini greece sea white dome sunset">
+                        <div class="explore-card-header">
+                            <div class="traveler-avatar"><i class="fa-solid fa-user-ninja"></i></div>
+                            <div class="traveler-info">
+                                <span class="traveler-username">@elena_explores</span>
+                                <span class="traveler-date">June 2026</span>
+                            </div>
+                            <span class="explore-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <div class="explore-card-img">
+                            <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="350" height="220" fill="#F0F9FF"/>
+                                <circle cx="70" cy="55" r="20" fill="#FBBF24" opacity="0.8"/>
+                                <rect y="140" width="350" height="80" fill="#0284C7"/>
+                                <path d="M120 220 L200 110 L370 220 Z" fill="#E2E8F0"/>
+                                <rect x="220" y="120" width="50" height="50" fill="#FFFFFF"/>
+                                <path d="M210 120 C210 90 280 90 280 120 Z" fill="#0284C7"/>
+                                <rect x="235" y="140" width="20" height="30" fill="#F8FAFC"/>
+                            </svg>
+                        </div>
+                        <div class="explore-card-body">
+                            <div class="explore-card-meta">
+                                <h3 class="explore-card-title">Cliffs of Santorini</h3>
+                                <span class="explore-card-location"><i class="fa-solid fa-location-dot"></i> Oia, Greece</span>
+                            </div>
+                            <p class="explore-card-text">Found a hidden path along the caldera cliffs to watch the sunset away from the tourist hot spots. The blue domes against the sea are surreal.</p>
+                            <div class="explore-card-coords">
+                                <span><i class="fa-solid fa-satellite"></i> Lat: 36.4166° N</span>
+                                <span>Lon: 25.4324° E</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Reykjavik -->
+                    <div class="explore-card" data-location="reykjavik iceland aurora mountain winter cold">
+                        <div class="explore-card-header">
+                            <div class="traveler-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                            <div class="traveler-info">
+                                <span class="traveler-username">@birgir_polar</span>
+                                <span class="traveler-date">March 2026</span>
+                            </div>
+                            <span class="explore-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <div class="explore-card-img">
+                            <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="350" height="220" fill="#0F172A"/>
+                                <path d="M20 50 Q120 -10 220 60 T350 30" stroke="#10B981" stroke-width="12" fill="none" opacity="0.4" stroke-linecap="round"/>
+                                <path d="M0 70 Q100 20 250 80 T380 40" stroke="#059669" stroke-width="8" fill="none" opacity="0.3" stroke-linecap="round"/>
+                                <path d="M40 220 L150 100 L260 220 Z" fill="#334155"/>
+                                <path d="M110 162 L150 100 L190 162 Z" fill="#F8FAFC"/>
+                                <path d="M180 220 L280 120 L380 220 Z" fill="#1E293B"/>
+                                <path d="M245 170 L280 120 L315 170 Z" fill="#F8FAFC"/>
+                            </svg>
+                        </div>
+                        <div class="explore-card-body">
+                            <div class="explore-card-meta">
+                                <h3 class="explore-card-title">Northern Lights Dance</h3>
+                                <span class="explore-card-location"><i class="fa-solid fa-location-dot"></i> Reykjavik, Iceland</span>
+                            </div>
+                            <p class="explore-card-text">Freezing cold night, but worth every single second. The sky lit up in bright green waves right above the mountains.</p>
+                            <div class="explore-card-coords">
+                                <span><i class="fa-solid fa-satellite"></i> Lat: 64.1466° N</span>
+                                <span>Lon: 21.9426° W</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Rome -->
+                    <div class="explore-card" data-location="rome italy colosseum ruins cobblestone pasta history">
+                        <div class="explore-card-header">
+                            <div class="traveler-avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="traveler-info">
+                                <span class="traveler-username">@marco_history</span>
+                                <span class="traveler-date">May 2026</span>
+                            </div>
+                            <span class="explore-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <div class="explore-card-img">
+                            <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="350" height="220" fill="#FFFBEB"/>
+                                <circle cx="290" cy="50" r="18" fill="#FBBF24" opacity="0.6"/>
+                                <!-- Colosseum silhouette -->
+                                <path d="M30 220 L30 140 C30 140 100 120 180 120 C260 120 320 140 320 140 L320 220 Z" fill="#D97706" opacity="0.3"/>
+                                <path d="M50 220 L50 160 L70 160 L70 220 Z" fill="#FFFBEB"/>
+                                <path d="M90 220 L90 160 L110 160 L110 220 Z" fill="#FFFBEB"/>
+                                <path d="M130 220 L130 160 L150 160 L150 220 Z" fill="#FFFBEB"/>
+                                <path d="M170 220 L170 160 L190 160 L190 220 Z" fill="#FFFBEB"/>
+                                <path d="M210 220 L210 160 L230 160 L230 220 Z" fill="#FFFBEB"/>
+                            </svg>
+                        </div>
+                        <div class="explore-card-body">
+                            <div class="explore-card-meta">
+                                <h3 class="explore-card-title">Ancient Colosseum</h3>
+                                <span class="explore-card-location"><i class="fa-solid fa-location-dot"></i> Rome, Italy</span>
+                            </div>
+                            <p class="explore-card-text">Wandering around the ruins of the Roman Forum and Colosseum. Unbelievable history layered in every corner of this city.</p>
+                            <div class="explore-card-coords">
+                                <span><i class="fa-solid fa-satellite"></i> Lat: 41.8902° N</span>
+                                <span>Lon: 12.4922° E</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Grand Canyon -->
+                    <div class="explore-card" data-location="grand canyon usa red rock national park canyon hike desert">
+                        <div class="explore-card-header">
+                            <div class="traveler-avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="traveler-info">
+                                <span class="traveler-username">@sarah_hikes</span>
+                                <span class="traveler-date">May 2026</span>
+                            </div>
+                            <span class="explore-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <div class="explore-card-img">
+                            <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="350" height="220" fill="#FEF3C7"/>
+                                <circle cx="300" cy="50" r="15" fill="#F59E0B" opacity="0.8"/>
+                                <!-- Canyon orange layers -->
+                                <path d="M-10 220 L40 160 L100 180 L180 140 L240 170 L300 130 L370 220 Z" fill="#D97706" opacity="0.6"/>
+                                <path d="M-10 220 L20 180 L80 200 L140 170 L200 190 L270 160 L370 220 Z" fill="#92400E" opacity="0.8"/>
+                            </svg>
+                        </div>
+                        <div class="explore-card-body">
+                            <div class="explore-card-meta">
+                                <h3 class="explore-card-title">Canyon Rim Sunrises</h3>
+                                <span class="explore-card-location"><i class="fa-solid fa-location-dot"></i> Arizona, USA</span>
+                            </div>
+                            <p class="explore-card-text">Woke up at 4:30 AM to catch the sunrise on the South Rim. The way the red rocks change colors in the morning light is breathtaking.</p>
+                            <div class="explore-card-coords">
+                                <span><i class="fa-solid fa-satellite"></i> Lat: 36.0544° N</span>
+                                <span>Lon: 112.1401° W</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Sydney -->
+                    <div class="explore-card" data-location="sydney australia opera house harbor bridge ocean beach surf">
+                        <div class="explore-card-header">
+                            <div class="traveler-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                            <div class="traveler-info">
+                                <span class="traveler-username">@liam_waves</span>
+                                <span class="traveler-date">April 2026</span>
+                            </div>
+                            <span class="explore-badge-verified"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                        </div>
+                        <div class="explore-card-img">
+                            <svg viewBox="0 0 350 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="350" height="220" fill="#F0F9FF"/>
+                                <circle cx="280" cy="50" r="16" fill="#FBBF24" opacity="0.7"/>
+                                <!-- Sea -->
+                                <rect y="150" width="350" height="70" fill="#0369A1" opacity="0.8"/>
+                                <!-- Opera House white sails -->
+                                <path d="M100 150 Q120 90 150 150 Z" fill="#FFFFFF"/>
+                                <path d="M130 150 Q160 80 190 150 Z" fill="#E2E8F0"/>
+                                <path d="M170 150 Q190 100 210 150 Z" fill="#FFFFFF"/>
+                            </svg>
+                        </div>
+                        <div class="explore-card-body">
+                            <div class="explore-card-meta">
+                                <h3 class="explore-card-title">Sydney Harbor Views</h3>
+                                <span class="explore-card-location"><i class="fa-solid fa-location-dot"></i> Sydney, Australia</span>
+                            </div>
+                            <p class="explore-card-text">Stunning afternoon stroll along the Circular Quay. The Opera House sails look magnificent against the clear blue sky.</p>
+                            <div class="explore-card-coords">
+                                <span><i class="fa-solid fa-satellite"></i> Lat: 33.8688° S</span>
+                                <span>Lon: 151.2093° E</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
