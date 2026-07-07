@@ -111,6 +111,24 @@ function initCheckIn() {
     // GPS Mock Fetching
     if (btnGetLocation && gpsStatus && gpsLat && gpsLng) {
         btnGetLocation.addEventListener('click', () => {
+            // Check the city input to provide real coordinates if matched
+            const cityInput = document.getElementById('checkinCity');
+            const cityName = cityInput ? cityInput.value.toLowerCase().trim() : '';
+
+            // Database of known city coordinates for realistic simulation
+            const cityCoordinates = {
+                'hyderabad': { lat: '17.3800', lng: '78.4917' },
+                'mumbai': { lat: '19.0760', lng: '72.8777' },
+                'chennai': { lat: '13.0827', lng: '80.2707' },
+                'kyoto': { lat: '35.0116', lng: '135.7681' },
+                'santorini': { lat: '36.4166', lng: '25.4324' },
+                'oia': { lat: '36.4622', lng: '25.3756' },
+                'reykjavik': { lat: '64.1466', lng: '-21.9426' },
+                'rome': { lat: '41.9028', lng: '12.4964' },
+                'grand canyon': { lat: '36.0544', lng: '-112.1401' },
+                'sydney': { lat: '-33.8688', lng: '151.2093' }
+            };
+
             // Update UI to show loading state
             const originalIcon = btnGetLocation.innerHTML;
             btnGetLocation.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fetching...';
@@ -119,9 +137,16 @@ function initCheckIn() {
             
             // Simulate 1 second network delay
             setTimeout(() => {
-                // Mock coordinate bounds for demonstration
-                const lat = (Math.random() * 180 - 90).toFixed(4);
-                const lng = (Math.random() * 360 - 180).toFixed(4);
+                let lat, lng;
+                
+                if (cityCoordinates[cityName]) {
+                    lat = cityCoordinates[cityName].lat;
+                    lng = cityCoordinates[cityName].lng;
+                } else {
+                    // Generate random coordinates if the city is not in our database
+                    lat = (Math.random() * 180 - 90).toFixed(4);
+                    lng = (Math.random() * 360 - 180).toFixed(4);
+                }
                 
                 // Populate inputs
                 gpsLat.value = lat;
