@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Pin Shadow -->
+  <ellipse cx="50" cy="94" rx="20" ry="5" fill="#E2E8F0"/>
+  
+  <!-- Outer location pin (Navy Blue: #1E3A8A) -->
+  <path d="M50 8C27.9 8 10 25.9 10 48c0 28 40 44 40 44s40-16 40-44c0-22.1-17.9-40-40-40z" fill="#1E3A8A"/>
+  
+  <!-- Camera lens outer frame (White border for contrast) -->
+  <circle cx="50" cy="43" r="20" fill="#FFFFFF"/>
+  
+  <!-- Camera lens outer glass (Emerald Green: #10B981) -->
+  <circle cx="50" cy="43" r="16" fill="#10B981"/>
+  
+  <!-- Camera lens inner ring (Darker Emerald Green: #047857) -->
+  <circle cx="50" cy="43" r="10" fill="#047857"/>
+  
+  <!-- Lens reflection glare -->
+  <circle cx="45" cy="38" r="3.5" fill="#FFFFFF" opacity="0.9"/>
+  
+  <!-- Center verification checkmark (Authenticity) -->
+  <path d="M46 44l3 3 6-6" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
