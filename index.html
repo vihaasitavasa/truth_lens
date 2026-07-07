@@ -36,8 +36,60 @@
     </header>
 
     <!-- Main Content Area -->
-    <main id="main-content" style="margin-top: 80px; padding: 2rem;">
-        <!-- Feature 2: Hero Section will be inserted here -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <!-- Left Column: Content -->
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fa-solid fa-circle-check"></i> 100% Authentic Travel</span>
+                    <h1 class="hero-title">Preserve Authentic Travel Memories</h1>
+                    <p class="hero-subtitle">Document your journeys with GPS-verified check-ins, capture authentic travel photos, and build your digital travel passport.</p>
+                    <div class="hero-actions">
+                        <a href="checkin.html" class="btn btn-primary"><i class="fa-solid fa-location-dot"></i> Start Journaling</a>
+                        <a href="explore.html" class="btn btn-secondary"><i class="fa-solid fa-compass"></i> Explore Destinations</a>
+                    </div>
+                </div>
+                <!-- Right Column: Interactive Card Mockup -->
+                <div class="hero-visual">
+                    <div class="mock-card">
+                        <div class="mock-card-image">
+                            <!-- SVG placeholder for a beautiful travel destination -->
+                            <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="400" height="250" fill="url(#bg-gradient)"/>
+                                <!-- Abstract mountains/hills -->
+                                <path d="M-50 250 L100 120 L250 250 Z" fill="#10B981" opacity="0.3"/>
+                                <path d="M150 250 L280 90 L450 250 Z" fill="#1E3A8A" opacity="0.2"/>
+                                <path d="M50 250 L200 150 L350 250 Z" fill="#047857" opacity="0.4"/>
+                                <!-- Sun -->
+                                <circle cx="300" cy="70" r="25" fill="#FBBF24"/>
+                                <defs>
+                                    <linearGradient id="bg-gradient" x1="0" y1="0" x2="400" y2="250" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#E0F2FE"/>
+                                        <stop offset="1" stop-color="#BAE6FD"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span class="mock-badge"><i class="fa-solid fa-shield-halved"></i> GPS Verified</span>
+                        </div>
+                        <div class="mock-card-body">
+                            <div class="mock-card-header">
+                                <div>
+                                    <h3 class="mock-card-title">Santorini Sunsets</h3>
+                                    <p class="mock-card-location"><i class="fa-solid fa-location-dot"></i> Oia, Greece</p>
+                                </div>
+                                <div class="mock-card-date">July 2026</div>
+                            </div>
+                            <p class="mock-card-text">"Watching the sun sink below the horizon from the cliffs of Oia. The white-domed churches glowed in the orange light."</p>
+                            <div class="mock-card-coords">
+                                <span><i class="fa-solid fa-satellite"></i> Lat: 36.4618° N</span>
+                                <span>Lon: 25.3753° E</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Main JavaScript Logic -->
