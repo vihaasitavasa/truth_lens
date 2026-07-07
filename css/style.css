@@ -1446,3 +1446,183 @@ img {
         gap: 2rem;
     }
 }
+
+/* ==========================================================================
+   CHECK-IN PAGE
+   ========================================================================== */
+.checkin-page {
+    margin-top: 80px;
+    background-color: var(--background);
+    min-height: calc(100vh - 80px);
+}
+
+.checkin-section {
+    padding: 4rem 2rem;
+}
+
+.checkin-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.checkin-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.checkin-card {
+    background-color: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 3rem;
+    border: 1px solid var(--border);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--text-primary);
+    background-color: var(--surface);
+    transition: var(--transition);
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* GPS Specific Styles */
+.gps-group-container {
+    background-color: #f8fafc;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--border);
+    margin-bottom: 2rem;
+}
+
+.gps-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.gps-actions .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.gps-status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--success);
+}
+
+.readonly-input {
+    background-color: #f1f5f9 !important;
+    color: var(--text-secondary) !important;
+    cursor: not-allowed;
+    border-color: #e2e8f0 !important;
+}
+
+.readonly-input:focus {
+    box-shadow: none !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* Upload Box Mock */
+.upload-box {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-md);
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc;
+}
+
+.upload-box:hover {
+    border-color: var(--primary-light);
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    color: var(--primary-light);
+    margin-bottom: 1rem;
+}
+
+.upload-box span {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.upload-subtext {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+    font-weight: 400 !important;
+}
+
+/* Submit Button */
+.submit-checkin-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Check-In */
+@media (max-width: 768px) {
+    .checkin-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .checkin-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .gps-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

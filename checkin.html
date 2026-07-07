@@ -36,8 +36,73 @@
     </header>
 
     <!-- Main Content Area -->
-    <main id="main-content" style="margin-top: 80px; padding: 2rem;">
-        <!-- Feature 9: Check-In Form will be inserted here -->
+    <main id="main-content" class="checkin-page">
+        <section class="checkin-section">
+            <div class="checkin-header">
+                <span class="section-tag">Log Memory</span>
+                <h1 class="section-title">New Verified Check-In</h1>
+                <p class="explore-subtitle">Document your travel journey securely with GPS-stamped verification.</p>
+            </div>
+
+            <div class="checkin-container">
+                <div class="checkin-card">
+                    <form id="checkinForm" class="checkin-form">
+                        
+                        <!-- Location Inputs -->
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label for="checkinCity">City / Region</label>
+                                <input type="text" id="checkinCity" placeholder="e.g. Kyoto" required>
+                            </div>
+                            <div class="form-group half">
+                                <label for="checkinCountry">Country</label>
+                                <input type="text" id="checkinCountry" placeholder="e.g. Japan" required>
+                            </div>
+                        </div>
+
+                        <!-- GPS Verification -->
+                        <div class="form-group gps-group-container">
+                            <label>GPS Coordinates Verification</label>
+                            <div class="gps-actions">
+                                <button type="button" id="btnGetLocation" class="btn btn-secondary">
+                                    <i class="fa-solid fa-satellite-dish"></i> Get Current Location
+                                </button>
+                                <span id="gpsStatus" class="gps-status"></span>
+                            </div>
+                            <div class="form-row gps-readouts">
+                                <div class="form-group half">
+                                    <input type="text" id="gpsLat" placeholder="Latitude" readonly class="readonly-input">
+                                </div>
+                                <div class="form-group half">
+                                    <input type="text" id="gpsLng" placeholder="Longitude" readonly class="readonly-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Photo Upload Mock -->
+                        <div class="form-group">
+                            <label>Upload Memory (Photo)</label>
+                            <div class="upload-box" id="uploadBox">
+                                <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                                <span>Drag & Drop your photo here</span>
+                                <span class="upload-subtext">or click to browse files</span>
+                            </div>
+                        </div>
+
+                        <!-- Journal Entry -->
+                        <div class="form-group">
+                            <label for="checkinNotes">Journal Entry</label>
+                            <textarea id="checkinNotes" rows="4" placeholder="Describe your experience here..." required></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="button" id="btnSubmitCheckin" class="btn btn-primary submit-checkin-btn">
+                            <i class="fa-solid fa-location-arrow"></i> Publish Verified Check-In
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->

@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Search Functionality (Explore page)
     initSearch();
+    
+    // Initialize Check-In Functionality (Check-In page)
+    initCheckIn();
 });
 
 /**
@@ -57,7 +60,7 @@ function initSearch() {
     const searchButton = document.getElementById('searchButton');
     const cards = document.querySelectorAll('.explore-card');
 
-    if (!searchInput || !cards.length) return;
+    if (!searchInput || cards.length === 0) return;
 
     // Filter function to match input text with card contents
     const filterCards = () => {
@@ -65,15 +68,20 @@ function initSearch() {
 
         cards.forEach(card => {
             const locationData = card.getAttribute('data-location') || '';
-            const cardTitle = card.querySelector('.explore-card-title')?.textContent || '';
-            const cardLocationText = card.querySelector('.explore-card-location')?.textContent || '';
-            const cardText = card.querySelector('.explore-card-text')?.textContent || '';
+            
+            const titleEl = card.querySelector('.explore-card-title');
+            const locationEl = card.querySelector('.explore-card-location');
+            const textEl = card.querySelector('.explore-card-text');
+            
+            const cardTitle = titleEl ? titleEl.textContent : '';
+            const cardLocationText = locationEl ? locationEl.textContent : '';
+            const cardText = textEl ? textEl.textContent : '';
 
             // Combine all available text elements inside the card for search
-            const searchableText = `${locationData} ${cardTitle} ${cardLocationText} ${cardText}`.toLowerCase();
+            const searchableText = (locationData + ' ' + cardTitle + ' ' + cardLocationText + ' ' + cardText).toLowerCase();
 
             // Toggle card display based on matching
-            if (searchableText.includes(query)) {
+            if (searchableText.indexOf(query) !== -1) {
                 card.style.display = '';
             } else {
                 card.style.display = 'none';
@@ -87,5 +95,50 @@ function initSearch() {
     // Also run filter when clicking the search button explicitly
     if (searchButton) {
         searchButton.addEventListener('click', filterCards);
+    }
+}
+
+/**
+ * Handles the Check-In page mock functionality (GPS and File Upload)
+ */
+function initCheckIn() {
+    const btnGetLocation = document.getElementById('btnGetLocation');
+    const gpsStatus = document.getElementById('gpsStatus');
+    const gpsLat = document.getElementById('gpsLat');
+    const gpsLng = document.getElementById('gpsLng');
+    const uploadBox = document.getElementById('uploadBox');
+    
+    // GPS Mock Fetching
+    if (btnGetLocation && gpsStatus && gpsLat && gpsLng) {
+        btnGetLocation.addEventListener('click', () => {
+            // Update UI to show loading state
+            const originalIcon = btnGetLocation.innerHTML;
+            btnGetLocation.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Fetching...';
+            btnGetLocation.disabled = true;
+            gpsStatus.textContent = '';
+            
+            // Simulate 1 second network delay
+            setTimeout(() => {
+                // Mock coordinate bounds for demonstration
+                const lat = (Math.random() * 180 - 90).toFixed(4);
+                const lng = (Math.random() * 360 - 180).toFixed(4);
+                
+                // Populate inputs
+                gpsLat.value = lat;
+                gpsLng.value = lng;
+                
+                // Restore button and show success
+                btnGetLocation.innerHTML = originalIcon;
+                btnGetLocation.disabled = false;
+                gpsStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> Verified via Satellite';
+            }, 1000);
+        });
+    }
+    
+    // Upload Box Mock Styling
+    if (uploadBox) {
+        uploadBox.addEventListener('click', () => {
+            alert('This would open your device\'s native file browser to select an image.');
+        });
     }
 }
